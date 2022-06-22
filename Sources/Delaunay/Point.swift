@@ -7,17 +7,24 @@
 //
 
 import Foundation
+import CoreGraphics
 
 /// A structure that contains a point in a two-dimensional coordinate system.
 public struct Point : Hashable {
     public var x: Double
     public var y: Double
-    public var index: Int = -1// Default is -1.
+    public var index: Int = -1 // Default is -1.
     
-    public init(x: Double, y: Double, i:Int = -1) {
+    public init(x: Double, y: Double, index: Int = -1) {
         self.x = x
         self.y = y
-        self.index = i
+        self.index = index
+    }
+    
+    public init(_ point: CGPoint, index: Int = -1) {
+        self.x = Double(point.x)
+        self.y = Double(point.y)
+        self.index = index
     }
     
     public static func +(lhs: Point, rhs: Point) -> Point {
