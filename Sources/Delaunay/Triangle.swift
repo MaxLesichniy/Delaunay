@@ -18,7 +18,7 @@ public struct Triangle {
         self.point1 = point1
         self.point2 = point2
         self.point3 = point3
-        self.centroid = (point1 + point2 + point3)/3.0
+        self.centroid = (point1 + point2 + point3) / 3.0
     }
     
     public init(_ point1: Point, _ point2: Point, _ point3: Point) {
@@ -26,7 +26,7 @@ public struct Triangle {
     }
     
     // Check wether point p is within triangle abc or on its border.
-    func contain(_ p:Point) -> Bool {
+    func contain(_ p: Point) -> Bool {
         let u = point1 - point2
         let v = point1 - point3
         let vxu = v.cross(u)

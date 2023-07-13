@@ -15,6 +15,10 @@ public struct Point : Hashable {
     public var y: Double
     public var index: Int = -1 // Default is -1.
     
+    public var cgPoint: CGPoint {
+        return CGPoint(x: CGFloat(x), y: CGFloat(y))
+    }
+    
     public init(x: Double, y: Double, index: Int = -1) {
         self.x = x
         self.y = y
