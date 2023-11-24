@@ -44,9 +44,7 @@ public class Delaunay  {
     }
     
     fileprivate func dedup(_ e: inout [Edge]) {
-        
         var e1: Edge?, e2: Edge?
-        
         var j = e.count
         while j > 0 {
             j -= 1
@@ -66,17 +64,15 @@ public class Delaunay  {
         }
     }
     
-    internal func _removeDuplicates(_ vertices: [Point]) -> [Point] {
+    internal func removeDuplicates(_ vertices: [Point]) -> [Point] {
         var _vertices = Array(Set(vertices))
-        _vertices.sort { (p1, p2) -> Bool in
-            return p1.index < p2.index
-        }
+        _vertices.sort { $0.index < $1.index }
         return _vertices
     }
     
     public func triangulate(_ vertices: [Point]) -> [Triangle] {
 
-        var _vertices = _removeDuplicates(vertices) 
+        var _vertices = removeDuplicates(vertices) 
         
         guard _vertices.count >= 3 else {
             return [Triangle]()

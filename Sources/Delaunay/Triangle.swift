@@ -9,7 +9,7 @@
 /// A simple struct representing 3 vertices
 public struct Triangle {
     
-    let centroid: Point
+    public let centroid: Point
     public let point1: Point
     public let point2: Point
     public let point3: Point

@@ -51,12 +51,12 @@ public struct Point : Hashable {
         return x * x + y * y
     }
     
-    public func distanceSqrt(_ point:Point) -> Double {
+    public func distanceSqrt(_ point: Point) -> Double {
         let d = Point(x: (x - point.x), y: (y - point.y) )
         return d.lengthSqrt()
     }
     
-    public func distance(_ point:Point) -> Double {
+    public func distance(_ point: Point) -> Double {
         return sqrt(self.distanceSqrt(point))
     }
     
@@ -64,11 +64,11 @@ public struct Point : Hashable {
         return sqrt(self.lengthSqrt())
     }
     
-    public func dot(_ point:Point) -> Double {
+    public func dot(_ point: Point) -> Double {
         return x * point.x + y * point.y
     }
     
-    public func cross(_ point:Point) -> Double {
+    public func cross(_ point: Point) -> Double {
         return x * point.y - y * point.x
     }
     
